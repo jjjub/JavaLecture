@@ -7,7 +7,7 @@ public class Q011 {
 	public static void main(String[] args) {
 		String result = "";
 		Scanner sc =new Scanner(System.in);
-		System.out.println("첫번쨰 숫자를 입력하시오.: ");
+		System.out.print("첫번쨰 숫자를 입력하시오.: ");
 		int n1 = sc.nextInt();
 		System.out.print("두번째 숫자를 입력하시오.: ");
 		int n2 = sc.nextInt();

@@ -13,19 +13,23 @@ public class Q013 {
 		System.out.print("수학 :");
 		int math = sc.nextInt();
 		getResult(kor, eng, math);
+		System.out.printf( "%s입니다.", getResult(kor, eng, math));
 
 	}
-
+	
+	//시험 결과계산 메서드
 	private static String getResult(int kor, int eng, int math) {
-		if (getAvg(kor, eng, math) < 60) {
-			
+		String result;
+		if (avg(kor, eng, math) < 60 || kor < 40 || eng < 40 || math <40) {
+			result ="불학격";
+		}else {
+			result ="합격";
 		}
-		return null;
-		// TODO Auto-generated method stub
-		
+		return result; //결과값 반환
 	}
 
-	private static double getAvg(int kor, int eng, int math) {
+	// 평균 구하는 메서드
+	private static double avg(int kor, int eng, int math) {
 		double avg = (kor + eng + math)/3;
 		return avg;
 		

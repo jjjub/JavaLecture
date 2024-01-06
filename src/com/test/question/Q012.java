@@ -11,13 +11,15 @@ public class Q012 {
 		int n = sc.nextInt();
 		result = getNumber(n); 
 		System.out.printf("입력하신 숫자 '%d'는(은) '%s'입니다.\n", n, result);
+		
+		sc.close();
 
 	}
 
 	private static String getNumber(int n) {
 		String result = "";
 		if (n % 2 == 0) {
-			result = "작수";
+			result = "짝수";
 		} else {
 			result = "홀수";
 		}
