@@ -11,21 +11,27 @@ public class Q026 {
 		System.out.print("점수 :");
 		korean = sc.nextInt();
 		if (korean >= 0 && korean <=100) {
-			if(korean >= 90 && korean <= 100) {
+			if(korean >= 90) {
 				score ="A";
-			}else if(korean >= 80 && korean < 90) {
+				System.out.printf("입력한 점수 %d은 성적 %s입니다.", korean, score);
+			}else if(korean >= 80) {
 				score = "B";
-			}else if(korean >=70 && korean < 80) {
+				System.out.printf("입력한 점수 %d은 성적 %s입니다.", korean, score);
+			}else if(korean >=70 ) {
 				score = "C";
-			}else if(korean >= 60 && korean < 70) {
+				System.out.printf("입력한 점수 %d은 성적 %s입니다.", korean, score);
+			}else if(korean >= 60) {
 				score = "D";
-			}else if(korean >= 0 && korean <60) {
+				System.out.printf("입력한 점수 %d은 성적 %s입니다.", korean, score);
+			}else if(korean >= 0) {
 				score = "F";
+				System.out.printf("입력한 점수 %d은 성적 %s입니다.", korean, score);
 			}
-		}else{System.out.println("점수가 올바르지 않습니다. 0~100사이의 값을 입력하시오.");
+		}else{
+			System.out.println("점수가 올바르지 않습니다. 0~100사이의 값을 입력하시오.");
 		}
 
-		System.out.printf("입력한 점수 %d은 성적 %s입니다.", korean, score);
+		
 		sc.close();
 	}
 

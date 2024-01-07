@@ -9,13 +9,13 @@ public class Q027 {
 		System.out.print("문자 : ");
 		String c1 = sc.next();
 		
-		if( c1 == "F" || c1 == "f") {
+		if( c1.equals("F") || c1.equals("f")) {
 			System.out.println("Father");
-		}else if( c1 == "M" || c1 == "m") {
+		}else if(c1.equals("M") || c1.equals("m")) {
 			System.out.println("Mother");
-		}else if(c1 == "S" || c1 == "s") {
+		}else if(c1.equals("S") || c1.equals("s")) {
 			System.out.println("Sister");
-		}else if(c1 == "B" || c1 == "b") {
+		}else if(c1.equals("B") || c1.equals("b")) {
 			System.out.println("Brother");
 		}else {
 			System.out.println("입력한 문자가 올바르지 않습니다.");

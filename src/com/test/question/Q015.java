@@ -9,7 +9,7 @@ public class Q015 {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("맑은 날: ");
 		int sunny = sc.nextInt();
-		System.out.println("흐린 날: ");
+		System.out.print("흐린 날: ");
 		int foggy = sc.nextInt();
 		apple = getApple(sunny, foggy);
 		System.out.printf("사과가 총 %d개 열렸습니다.", apple);
