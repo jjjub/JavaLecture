@@ -11,16 +11,9 @@ public class Q010 {
 	}
 
 	private static void digit(int num) {
-		if (num >= 1000) {
-			System.out.println(num);
-		} else if (num < 10) {
-			System.out.printf("%04d\n", num); // 한자리
-		} else if (num < 100) {
-			System.out.printf("%04d\n", num); // 두자리
-		} else {
-			System.out.printf("%04d\n", num); // 세자리
+		String result = "";
+		result = (num < 10) ? "000" + num : (num < 100) ? "00" + num : (num < 1000) ? "0" + num : "" + num;
+		System.out.printf("%d -> %s\n", num , result);
 		}
-
-	}
 
 }
