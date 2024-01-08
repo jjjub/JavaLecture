@@ -22,6 +22,7 @@ public class Q013 {
 		String result;
 		if (avg(kor, eng, math) < 60 || kor < 40 || eng < 40 || math <40) {
 			result ="불학격";
+			result ="불합격";
 		}else {
 			result ="합격";
 		}
