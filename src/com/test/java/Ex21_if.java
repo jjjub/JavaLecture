@@ -16,7 +16,6 @@ public class Ex21_if {
 		 * if (조건식){
 		 *  문장; 
 		 * } else{
-		 * 
 		 *  문장 
 		 * }
 		 * 

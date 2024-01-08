@@ -5,18 +5,15 @@ import java.util.Scanner;
 public class Q005 {
 
 	public static void main(String[] args) {
-		double aInCome, tax;
-		Scanner sc = new Scanner(System.in);
+		double length;
+		Scanner scanner = new Scanner(System.in);
 		
-		System.out.print("한달 수입 금액(원): ");
-		double bInCome=sc.nextInt();
+		System.out.print("사용자가 페달을 밟은 횟수: ");
+		int cycle = scanner.nextInt();
+		length = cycle * (2 * 3.14 * 0.3302);
 		
-		tax = bInCome  * 0.033;
-		aInCome =bInCome - tax;
-		System.out.printf
-		("세후 금액(원): %,.0f원 \n세금(원) : %,.0f원", aInCome, tax);
-		sc.close();
+		System.out.printf("사용자가 총 %,d회 페달을 밟아 자전거가 총 %,.2fm를 달렸습니다.", cycle, length);
+		scanner.close();
 	}
 
 }
-

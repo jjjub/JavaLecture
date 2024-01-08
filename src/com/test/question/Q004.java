@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class Q004 {
 
 	public static void main(String[] args) {
-		double length;
+		float celsius, fahrenheit;
 		Scanner scanner = new Scanner(System.in);
+		System.out.print("섭씨(℃): ");
+		celsius = scanner.nextFloat();
+		fahrenheit = 9/5F * celsius + 32F;
 		
-		System.out.print("사용자가 페달을 밟은 횟수: ");
-		int cycle = scanner.nextInt();
-		length = cycle * (2 * 3.14 * 0.3302);
+		System.out.printf("섭씨 %.1f℃는 화씨 %.1f℉입니다.", celsius, fahrenheit);
 		
-		System.out.printf("사용자가 총 %,d회 페달을 밟아 자전거가 총 %,.2fm를 달렸습니다.", cycle, length);
+		scanner.close();
 
 	}
 
