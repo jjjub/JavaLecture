@@ -32,14 +32,14 @@ public class Q011 {
 
 	private static String mod(int n1, int n2) {
 		double sum;
-		sum = n1 % n2;
+		sum = (double)n1 % n2;
 		String str  = n1 + " % " + n2 + " = " + sum;
 		return str;
 	}
 
 	private static String divide(int n1, int n2) {
 		double sum;
-		sum = n1 / n2;
+		sum = (double)n1 / n2;
 		String str  = n1 + " / " + n2 + " = " + sum;
 		return str;
 	}

@@ -28,7 +28,29 @@ public class Ex23_for {
 //		m9();
 //		m10();
 //		m11();
-		m12();
+//		m12();
+		m13();
+	}
+
+	private static void m13() throws NumberFormatException, IOException {
+		//요구사항) 숫자 5개 입력(1~10) > 가장 큰 수
+		BufferedReader reader =new  BufferedReader(new InputStreamReader(System.in));
+		int max = 1; //입력받을 숫자 중 가장 작은 숫자로 초기화
+		int min =10;
+		for (int i=0; i<5; i++) {
+			System.out.println("숫자: ");
+			int num = Integer.parseInt(reader.readLine());
+			
+			if(num > max) {
+				max = num;
+			}
+			
+			if(num < min) {
+				min = num;
+			}
+		}
+		System.out.println("max: " + max);
+		System.out.println("min: " + min);
 	}
 
 	private static void m12() {

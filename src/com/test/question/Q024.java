@@ -8,7 +8,7 @@ public class Q024 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("음식을 받기 워하는 시각");
+		System.out.println("음식을 받기 원하는 시각");
 		System.out.print("시: ");
 		int hour = sc.nextInt();
 		System.out.print("분: ");
