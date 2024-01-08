@@ -10,6 +10,11 @@ public class Ex17_LocalVariable {
 		int num = 100;
 		checkNumber(num);
 		aaa();
+		
+		if (num>0) {
+			int b =10;
+			System.out.println("b : "+b);
+		}
 
 	}//main
 	
