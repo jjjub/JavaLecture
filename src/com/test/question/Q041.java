@@ -8,7 +8,7 @@ public class Q041 {
 		String result = "";
 		while(sum <= 1000) {
 			sum += i;
-			result += i;
+			result += i; //"1"+2+3+4
 			if(sum < 1000) {
 				result += "+";
 			}

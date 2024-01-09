@@ -8,6 +8,7 @@ public class Q038 {
 		Scanner sc = new Scanner(System.in);
 		int odd = 0, even = 0;
 		int countOdd = 0, countEven = 0;
+		
 		System.out.print("입력 횟수: ");
 		int num = sc.nextInt();
 		for(int i=0; i < num; i++){

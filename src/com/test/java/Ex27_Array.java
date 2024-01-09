@@ -21,7 +21,101 @@ public class Ex27_Array {
 //		m8();
 //		m9();
 //		m10();
-		m11();
+//		m11();
+//		m12();
+		m13();
+	}
+
+	private static void m13() {
+		// TODO Auto-generated method stub
+		int[] nums = {5, 3, 1, 4, 2};	
+		String[] names = { "홍길동", "아무개", "테스트", "유재석", 
+				"강아지", " 고양이", "도깨비", " 박명수", "조세호", "병아리" };
+		
+		//Quick Sort
+		Arrays.sort(nums);
+		System.out.println(Arrays.toString(nums));
+		
+		Arrays.sort(names);
+		System.out.println(Arrays.toString(names));
+	}
+
+	private static void m12() {
+		
+//		- 크기 비교 후 > 재배치
+//		  
+//		1. 오름차순
+//		  a. 숫자 : 작은수 > 큰수
+//		  b. 문자열 : 문자코드값 순
+//		  c. 날짜시간 : 과거 > 미래
+//		2. 내림차순
+//		  a. 숫자 : 큰수 > 작은수
+//		  b. 문자열 : 문자코드값 역순
+//		  c. 날짜시간 : 미래 > 과거
+//
+//		정렬 구현
+//		1. 직접구현 > 정렬 알고리즘
+//		2. JDK 구현된 기능
+		
+		
+		//버블 정렬 + swap
+		//swap > 두 공간의 데이터를 서로 바꾸는 작업
+		int a = 10;
+		int b = 5;
+		
+		int temp;
+		
+		temp = a;
+		a = b;
+		b = temp;
+		
+		System.out.println("a: "+a);
+		System.out.println("b: "+b);
+		
+		
+		int[] nums = {5, 3, 1, 4, 2};
+		System.out.println(Arrays.toString(nums));
+		
+		for(int i=0; i<nums.length-1; i++) {
+			//오름차순
+			for(int j=0; j<nums.length-1-i; j++) {
+				if(nums[j] > nums[j+1]) {	//부등호 바꾸면 내림차순
+					temp = nums[j];
+					nums[j] = nums[j+1];
+					nums[j+1] = temp;
+				}
+			}
+		}
+		System.out.println(Arrays.toString(nums));
+		
+
+//		String name1 = "A";
+//		String name2 = "B";
+//		System.out.println(name1.compareTo(name2)); //문자비교값 메서드
+//		
+//		//두 글자의 문자코드값 차이
+//		System.out.println((int)'홍');
+//		System.out.println((int)'아');
+		
+		String[] names = { "홍길동", "아무개", "테스트", "유재석", "강아지", " 고양이", "도깨비", " 박명수", "조세호", "병아리" };
+		
+		for(int i=0; i<names.length-1; i++) {
+			for(int j=0; j<names.length-1-i; j++) {
+				if(names[j].compareTo(names[j+1]) > 0) {
+					String temp2 = names[j];
+					names[j] = names[j+1];
+					names[j+1] = temp2;
+					
+				}
+			}
+		}
+		System.out.println(Arrays.toString(names));
+		
+		
+		
+		
+		
+		
 	}
 
 	private static void m11() {
@@ -35,6 +129,24 @@ public class Ex27_Array {
 		nums1[3] = 89;
 		nums1[4] = 64;
 		System.out.println(Arrays.toString(nums1));
+		
+		int[] nums2 = new int[] { 95, 88, 67, 89, 64 };
+		System.out.println(Arrays.toString(nums2));
+		
+		
+		int[] nums3 = { 95, 88, 67, 89, 64 };
+		System.out.println(Arrays.toString(nums3));
+		
+		String[] names1 = new String[3];
+		
+		names1[0] = "홍길동" ;
+		names1[0] = "임쩍정" ;
+		names1[0] = "도깨비" ;
+		
+		String[] names2 = {"홍길동", "임꺽정", "도깨비"};
+		
+		System.out.println(Arrays.toString(names1));
+		System.out.println(Arrays.toString(names2));
 	}
 
 	private static void m10() {
