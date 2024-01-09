@@ -18,7 +18,7 @@ public class Q035 {
 			System.out.printf("%s님 안녕하세요~\n", name);
 		}
 		System.out.println();
-
+		sc.close();
 	}
 
 }

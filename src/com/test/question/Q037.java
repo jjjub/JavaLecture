@@ -14,7 +14,7 @@ public class Q037 {
 			sum+=i;
 		}
 		System.out.printf("1 ~ %d = %d", num, sum);
-
+		sc.close();
 	}
 
 }

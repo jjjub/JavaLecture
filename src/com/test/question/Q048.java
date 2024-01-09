@@ -8,7 +8,7 @@ public class Q048 {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("숫자입력: ");
 		int num = sc.nextInt();
-
+		sc.close();
 	}
 
 }

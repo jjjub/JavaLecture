@@ -16,7 +16,7 @@ public class Q036 {
 		for(int i=firstNum; i<=lastNum; i+=plus) {
 			System.out.printf("%d\n", i);
 		}
-
+		sc.close();
 	}
 
 }
