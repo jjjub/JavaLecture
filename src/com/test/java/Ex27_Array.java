@@ -4,6 +4,8 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Calendar;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 public class Ex27_Array {
 
 	public static void main(String[] args) {
@@ -23,25 +25,190 @@ public class Ex27_Array {
 //		m10();
 //		m11();
 //		m12();
-		m13();
+//		m13();
+//		m14();
+//		m15();
+//		m16();
+		m17();
+	}
+
+	private static void m17() {
+		// 초기화 리스트
+
+		int[] nums1 = { 10, 20, 30 };
+		int[][] nums2 = {
+							{ 10, 20, 30 },
+							{ 40, 50, 60 }
+						};
+		int[][][] nums3 = 
+						{
+							{
+								{ 10, 20, 30 },
+								{ 40, 50, 60 }
+							},
+							{	
+								{ 70, 80, 90 },
+								{ 100, 110, 120 }
+							}
+						};
+		
+		//Jagged Array, 비정형 배열, 불규칙 배열
+		
+		int[][] nums4 = new int[3][4];
+		
+		int[][] nums5 = 
+			{
+				{10,20,30}, 
+				{40,50}, 
+				{60,70,80,90}
+			};
+		
+		//jagged Array 탐색
+		for(int i=0; i<nums5.length; i++) {
+			for(int j=0; j<nums5[i].length; j++) {
+				System.out.printf("%5d", nums5[i][j]);
+			}
+			System.out.println();
+		}
+		
+		
+		
+		
+	}
+
+	private static void m16() {
+		// 배열의 차원
+		// 1차원 배열, 2차원 배열, 3차원 배열..
+		// 1차원 배열
+		int[] nums1 = new int[3];
+		nums1[0] = 10;
+		nums1[1] = 20;
+		nums1[2] = 30;
+
+		System.out.println(Arrays.toString(nums1));
+
+		// 2차원배열
+		int[][] nums2 = new int[2][3];
+		nums2[0][0] = 10;
+		// nums2자료형 > int[][]
+		// nums2[0]자료형 > int[]
+		// nums2[0][0] 자료형 > int
+		nums2[0][1] = 20;
+		nums2[0][2] = 30;
+
+		nums2[1][0] = 40;
+		nums2[1][1] = 50;
+		nums2[1][2] = 60;
+
+		System.out.println(Arrays.toString(nums2));
+		System.out.println(Arrays.deepToString(nums2));
+
+		// 2차원 배열 탐색
+
+		System.out.println(nums2.length); // 2
+		System.out.println(nums2[0].length); // 3
+		System.out.println(nums2[0][0]); // 10
+
+		for (int i = 0; i < nums2.length; i++) {
+			for (int j = 0; j < nums2[0].length; j++) {
+				System.out.printf(nums2[i][j] + "\t");
+			}
+			System.out.println();
+		}
+		System.out.println();
+
+		// 3차원 배열
+
+		int[][][] nums3 = new int[2][2][3];
+
+		nums3[0][0][0] = 10;
+		nums3[0][0][1] = 20;
+		nums3[0][0][2] = 30;
+
+		nums3[0][1][0] = 40;
+		nums3[0][1][1] = 50;
+		nums3[0][1][2] = 60;
+
+		nums3[1][0][0] = 70;
+		nums3[1][0][1] = 80;
+		nums3[1][0][2] = 90;
+
+		nums3[1][1][0] = 100;
+		nums3[1][1][1] = 110;
+		nums3[1][1][2] = 120;
+
+		for (int i = 0; i < nums3.length; i++) {
+			for (int j = 0; j < nums3[0].length; j++) {
+				for (int k = 0; k < nums3[0][0].length; k++) {
+					System.out.printf("%5d", nums3[i][j][k]);
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+
+	}
+
+	private static void m15() {
+		// 배열 요소 삭제(Delection)
+		// Left Shift > 왼쪽으로 한칸씩 이동했다.
+		// *** 삽입 이후의 요소들의 인덱스가 변경된다.
+		int[] nums = { 1, 2, 3, 4, 5 };
+		int index = 1;
+
+		System.out.println(Arrays.toString(nums));
+
+		for (int i = index; i <= nums.length - 2; i++) {
+			nums[i] = nums[i + 1];
+		}
+		nums[nums.length - 1] = 0;
+		System.out.println(Arrays.toString(nums));
+
+	}
+
+	private static void m14() {
+		// 배열조작
+		// 삽입, 삭제
+		// 비용 발생
+
+		// 배열 요소 삽입(Insertion)
+		// Right Shift > 오른쪽으로 한칸씩 이동했다.
+		// *** 삽입 이후의 요소들의 인덱스가 변경된다.
+		int[] nums = { 1, 2, 3, 4, 5 };
+		int index = 1;
+		int value = 9;
+
+		System.out.println("nums[0] =" + nums[0]);
+		System.out.println("nums[3] =" + nums[3]);
+
+		System.out.println(Arrays.toString(nums));
+		for (int i = nums.length - 2; i >= index; i--) {
+//			System.out.println(i);
+			nums[i + 1] = nums[i];
+			System.out.println(Arrays.toString(nums));
+		}
+		nums[index] = value;
+		System.out.println(Arrays.toString(nums));
+
+		System.out.println("nums[0] =" + nums[0]);
+		System.out.println("nums[3] =" + nums[3]);
 	}
 
 	private static void m13() {
 		// TODO Auto-generated method stub
-		int[] nums = {5, 3, 1, 4, 2};	
-		String[] names = { "홍길동", "아무개", "테스트", "유재석", 
-				"강아지", " 고양이", "도깨비", " 박명수", "조세호", "병아리" };
-		
-		//Quick Sort
+		int[] nums = { 5, 3, 1, 4, 2 };
+		String[] names = { "홍길동", "아무개", "테스트", "유재석", "강아지", " 고양이", "도깨비", " 박명수", "조세호", "병아리" };
+
+		// Quick Sort
 		Arrays.sort(nums);
 		System.out.println(Arrays.toString(nums));
-		
+
 		Arrays.sort(names);
 		System.out.println(Arrays.toString(names));
 	}
 
 	private static void m12() {
-		
+
 //		- 크기 비교 후 > 재배치
 //		  
 //		1. 오름차순
@@ -56,38 +223,35 @@ public class Ex27_Array {
 //		정렬 구현
 //		1. 직접구현 > 정렬 알고리즘
 //		2. JDK 구현된 기능
-		
-		
-		//버블 정렬 + swap
-		//swap > 두 공간의 데이터를 서로 바꾸는 작업
+
+		// 버블 정렬 + swap
+		// swap > 두 공간의 데이터를 서로 바꾸는 작업
 		int a = 10;
 		int b = 5;
-		
+
 		int temp;
-		
+
 		temp = a;
 		a = b;
 		b = temp;
-		
-		System.out.println("a: "+a);
-		System.out.println("b: "+b);
-		
-		
-		int[] nums = {5, 3, 1, 4, 2};
+
+		System.out.println("a: " + a);
+		System.out.println("b: " + b);
+
+		int[] nums = { 5, 3, 1, 4, 2 };
 		System.out.println(Arrays.toString(nums));
-		
-		for(int i=0; i<nums.length-1; i++) {
-			//오름차순
-			for(int j=0; j<nums.length-1-i; j++) {
-				if(nums[j] > nums[j+1]) {	//부등호 바꾸면 내림차순
+
+		for (int i = 0; i < nums.length - 1; i++) {
+			// 오름차순
+			for (int j = 0; j < nums.length - 1 - i; j++) {
+				if (nums[j] > nums[j + 1]) { // 부등호 바꾸면 내림차순
 					temp = nums[j];
-					nums[j] = nums[j+1];
-					nums[j+1] = temp;
+					nums[j] = nums[j + 1];
+					nums[j + 1] = temp;
 				}
 			}
 		}
 		System.out.println(Arrays.toString(nums));
-		
 
 //		String name1 = "A";
 //		String name2 = "B";
@@ -96,55 +260,49 @@ public class Ex27_Array {
 //		//두 글자의 문자코드값 차이
 //		System.out.println((int)'홍');
 //		System.out.println((int)'아');
-		
+
 		String[] names = { "홍길동", "아무개", "테스트", "유재석", "강아지", " 고양이", "도깨비", " 박명수", "조세호", "병아리" };
-		
-		for(int i=0; i<names.length-1; i++) {
-			for(int j=0; j<names.length-1-i; j++) {
-				if(names[j].compareTo(names[j+1]) > 0) {
+
+		for (int i = 0; i < names.length - 1; i++) {
+			for (int j = 0; j < names.length - 1 - i; j++) {
+				if (names[j].compareTo(names[j + 1]) > 0) {
 					String temp2 = names[j];
-					names[j] = names[j+1];
-					names[j+1] = temp2;
-					
+					names[j] = names[j + 1];
+					names[j + 1] = temp2;
+
 				}
 			}
 		}
 		System.out.println(Arrays.toString(names));
-		
-		
-		
-		
-		
-		
+
 	}
 
 	private static void m11() {
 		// 배열 초기화 리스트
-		
+
 		int[] nums1 = new int[5];
-		
+
 		nums1[0] = 95;
 		nums1[1] = 88;
 		nums1[2] = 67;
 		nums1[3] = 89;
 		nums1[4] = 64;
 		System.out.println(Arrays.toString(nums1));
-		
+
 		int[] nums2 = new int[] { 95, 88, 67, 89, 64 };
 		System.out.println(Arrays.toString(nums2));
-		
-		
+
 		int[] nums3 = { 95, 88, 67, 89, 64 };
 		System.out.println(Arrays.toString(nums3));
-		
+
 		String[] names1 = new String[3];
-		
-		names1[0] = "홍길동" ;
-		names1[0] = "임쩍정" ;
-		names1[0] = "도깨비" ;
-		
-		String[] names2 = {"홍길동", "임꺽정", "도깨비"};
-		
+
+		names1[0] = "홍길동";
+		names1[0] = "임쩍정";
+		names1[0] = "도깨비";
+
+		String[] names2 = { "홍길동", "임꺽정", "도깨비" };
+
 		System.out.println(Arrays.toString(names1));
 		System.out.println(Arrays.toString(names2));
 	}

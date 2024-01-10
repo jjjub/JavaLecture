@@ -9,7 +9,7 @@ public class Q058 {
 				sum+=j;
 			}
 			System.out.printf("%d ~ %3d: %5d\n", i,  i+9, sum);
-		}
+					}
 
 	}
 	
