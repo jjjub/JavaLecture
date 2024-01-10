@@ -14,6 +14,7 @@ public class Q013 {
 		int math = sc.nextInt();
 		getResult(kor, eng, math);
 		System.out.printf( "%s입니다.", getResult(kor, eng, math));
+		sc.close();
 
 	}
 	

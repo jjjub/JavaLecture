@@ -3,8 +3,10 @@ package com.test.java;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Scanner;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 
 public class Ex27_Array {
 
@@ -29,7 +31,52 @@ public class Ex27_Array {
 //		m14();
 //		m15();
 //		m16();
-		m17();
+//		m17();
+//		m18();
+//		m19();
+		m20();
+	}
+
+	private static void m20() {
+		int[][] nums = new int[5][5];
+		int n = 1;
+		for(int i=4; i>=0; i--) {
+			for(int j=4; j>=0; j--) {
+				nums[i][j] = n;
+				n++;
+			}
+		}
+		
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<5; j++) {
+				System.out.printf("%3d", nums[i][j]);
+			}
+			System.out.println();
+		}
+
+		//71
+	}
+
+	private static void m19() {
+		// ****배열의 길이는 불변이다.
+		// 한번 만들어진 배열의 방은 더 늘리거나 삭제할 수 없다.
+		
+//		int[] nums = new int[3];	//
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("학생 수: ");
+
+		int length = sc.nextInt();
+		int[] kor = new int[length];	//동적할당
+		System.out.println(kor.length);
+		
+	}
+
+	private static void m18() {
+		for (int i=0; i<10; i++) {
+			System.out.println((int)(Math.random()*100)+1);
+		}
+		
 	}
 
 	private static void m17() {

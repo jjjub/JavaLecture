@@ -20,7 +20,7 @@ public class Q056 {
 		
 		for (int i = 1; i <= ((num1 > num2) ? num1 : num2); i++) {	//1~ num1과num2중 더 큰수만큼 반복
 			if (num1 % i == 0 && num2 % i == 0) {	//i로 num1과num2 모두 나머지가 0이면
-				if (i == 1) { // 첫번째 수는 , 생략	//문자열에 담기
+				if (i == 1) { 	//문자열에 담기
 					same += i;
 				} else { // 나머지 수는 ,포함
 					same += ", " + i;
