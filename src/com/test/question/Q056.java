@@ -33,6 +33,7 @@ public class Q056 {
 		System.out.printf("%d의 약수 : %s", num2, result2);
 		System.out.println();
 		System.out.printf("%d와 %d의 공약수 : %s", num1, num2, same);
+		sc.close();
 		
 	}
 

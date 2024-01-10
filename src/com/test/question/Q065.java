@@ -29,7 +29,7 @@ public class Q065 {
 		}
 		System.out.println("원본: " + Arrays.toString(og));
 		System.out.println("결과: " + Arrays.toString(result));
-
+		sc.close();
 	}
 
 }
