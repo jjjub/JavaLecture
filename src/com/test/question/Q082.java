@@ -24,6 +24,7 @@ public class Q082 {
 			}
 		}
 		System.out.printf("%s = %d", result, sum);
+		sc.close();
 	}
 
 }

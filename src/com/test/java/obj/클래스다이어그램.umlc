@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<umlmark-class version="0.8.1" icons="true" show-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-rel="true" router="FAN">  
+  <class id="1" language="java" name="com.test.java.obj.Point" project="JavaTest" 
+    file="/JavaTest/src/com/test/java/obj/Ex30_Class.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="87" x="95" y="60"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="false"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.test.java.obj.Ex30_Class" project="JavaTest" 
+    file="/JavaTest/src/com/test/java/obj/Ex30_Class.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1008" y="100"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="false"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.test.java.obj.Score" project="JavaTest" 
+    file="/JavaTest/src/com/test/java/obj/Ex30_Class.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="406" y="123"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="false"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.test.java.obj.Size" project="JavaTest" 
+    file="/JavaTest/src/com/test/java/obj/Ex30_Class.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="93" x="235" y="57"/>    
+    <display resize-to-fit="false" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="false" package="true" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.test.java.obj.Member" project="JavaTest" 
+    file="/JavaTest/src/com/test/java/obj/Ex32_Class.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="407" y="271"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.test.java.obj.Ex32_Class" project="JavaTest" 
+    file="/JavaTest/src/com/test/java/obj/Ex32_Class.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1010" y="205"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="false"/>      
+      <operations public="true" package="false" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-attribute resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" 
+    sort="true" accessors="true" visibility="true">    
+    <attributes public="true" package="false" protected="true" private="true" static="false"/>    
+    <operations public="true" package="false" protected="true" private="true" static="true"/>  
+  </classifier-attribute>  
+  <association-attribute labels="true" multiplicity="true"/>
+</umlmark-class>

@@ -22,7 +22,7 @@ public class Q065 {
 		
 		for (int i = 0; i < 20; i++) {
 			num = (int) (Math.random() * 20) + 1;	
-			og[i] = num;							//ok
+			og[i] = num;				
 			if (num <= max && num >= min) {
 				result[i] = num;
 			}
