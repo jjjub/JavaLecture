@@ -16,11 +16,14 @@ public class Book {
 		return title;
 	}
 	public void setTitle(String title) {
-		if(title.length()> 50) {
+		for(int i=0; i<title.length(); i++) {
+		char c =title.charAt(i);
+		if(title.length()> 50 && (c<'A'||c>'B') && (c<'a' || c<'b') && (c<'0' || c>'9')&& c!=' ') {
 			return;
 		}else {
 		this.title = title;
 		}
+	}
 	}
 	public int getPrice() {
 		return price;

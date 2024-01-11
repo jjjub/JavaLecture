@@ -32,19 +32,31 @@ public class Note {
 	public void setOwner(String owner) {
 		this.owner = owner;
 	}
-	setThick(int page);
-	String tmp ="";
+	
+	
 	public String info() {
+		String tmp ="";
+		
+		String thickPage ="";
+		
+		if(this.page > 10 && this.page<=50) {
+			thickPage = "얇은";
+		}else if(this.page > 51 && this.page <= 100){
+			thickPage ="보통";
+		}else if(this.page >= 101 && this.page <=200) {
+			thickPage ="두꺼운";
+		}
+		
 		
 		if(owner == null) {
-			tmp+="■■■■■■■■■■노트정보■■■■■■■■■■\r\n";
+			tmp+="■■■■■■■■■■■노트정보■■■■■■■■■■■■■\r\n";
 			tmp+="주인없는 노트\r\n";
 			tmp+="■■■■■■■■■■■■■■■■■■■■■■■■■■■■■";
 		}else {
 		
-		tmp += "■■■■■■■■■■노트정보■■■■■■■■■■\r\n";
+		tmp += "■■■■■■■■■■■노트정보■■■■■■■■■■■■■\r\n";
 		tmp +="소유자 : "+ owner + "\r\n";
-		tmp +="특성 : " + color+" " + size +"노트\r\n"; 
+		tmp +="특성 : " + color+" "+thickPage+" " + size +"노트\r\n"; 
 		tmp +="가격 : " + getPrice(price) + "\r\n";
 		tmp += "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\r\n";
 
@@ -55,7 +67,7 @@ public class Note {
 	}
 	
 	
-	private int getPrice(int price2) {
+	private int getPrice(int price) {
 		int sumPrice = 500;
 		if(size == "A3") {
 			sumPrice += 300;
@@ -87,5 +99,5 @@ public class Note {
 		}		 
 		return price;
 	}
-	
 }
+
