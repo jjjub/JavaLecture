@@ -18,6 +18,7 @@ public class Q051 {
 			}
 			System.out.println();
 		}
+		sc.close();
 	}
 
 }

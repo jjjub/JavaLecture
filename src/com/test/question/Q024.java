@@ -27,6 +27,7 @@ public class Q024 {
 		
 		now.add(Calendar.MINUTE, -7);
 		System.out.printf("피자 : %d시 %d분\n", now.get(Calendar.HOUR_OF_DAY), now.get(Calendar.MINUTE));
+		sc.close();
 	}
 
 }

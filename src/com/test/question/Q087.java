@@ -19,7 +19,7 @@ public class Q087 {
 			result += capital;
 		}
 		System.out.println("결과:" + result);
-
+		sc.close();
 	}
 
 }

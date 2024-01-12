@@ -22,6 +22,7 @@ public class Q039 {
 			
 		}
 		System.out.println(result + " = " + sum);
+		sc.close();
 	}
 
 }

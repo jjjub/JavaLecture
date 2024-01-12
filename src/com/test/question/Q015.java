@@ -13,6 +13,7 @@ public class Q015 {
 		int foggy = sc.nextInt();
 		apple = getApple(sunny, foggy);
 		System.out.printf("사과가 총 %d개 열렸습니다.", apple);
+		sc.close();
 	}
 
 	private static int getApple(int sunny, int foggy) {

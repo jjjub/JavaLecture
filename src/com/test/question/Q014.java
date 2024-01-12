@@ -15,6 +15,7 @@ public class Q014 {
 		int time = sc.nextInt();
 		result = getTime(station, change, time);
 		System.out.printf("총 소요 시간은 %d입니다.", result);
+		sc.close();
 	}
 
 	private static int getTime(int station, int change, int time) {

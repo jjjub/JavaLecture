@@ -15,7 +15,7 @@ public class Q067 {
 		System.out.print("값: ");
 		int value = sc.nextInt();
 
-		for (int i = list.length -1; i < value; i--) {
+		for (int i = list.length -1; i < index; i--) {
 			list[i] = list[i + 1];
 		}
 		list[index] = value;

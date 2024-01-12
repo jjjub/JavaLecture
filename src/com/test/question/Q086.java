@@ -17,7 +17,7 @@ public class Q086 {
 			
 		}
 		System.out.println(result);
-
+		sc.close();
 	}
 
 }

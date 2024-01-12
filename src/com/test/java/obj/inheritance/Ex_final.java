@@ -52,6 +52,14 @@ public class Ex_final {
 		s2.age = 22;
 		s2.gender = Gender.FEMALE;
 		
+		//난수 생성
+		// 숫자만 
+		// 문자열 + 배열
+		String[] color = {"빨강","노랑", "파랑", "검정", "보라", "주황"};
+		
+		//난수 > 방번호
+		System.out.println(color[(int)(Math.random()*6)]);
+		
 		
 
 	}

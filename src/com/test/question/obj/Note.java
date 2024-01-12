@@ -68,7 +68,13 @@ public class Note {
 	
 	
 	private int getPrice(int price) {
+		if(size == "A5" && color == "white" && page <= 10) {
+			price = 500;
+			return price;
+		}	//기본 가격
+		
 		int sumPrice = 500;
+		//추가가격 구하기
 		if(size == "A3") {
 			sumPrice += 300;
 		}else if(size == "A4") {
@@ -91,12 +97,9 @@ public class Note {
 		
 		if(page > 10) {
 			sumPrice += (page - 10) * 10;
+			price += sumPrice;
 		}
-		price = sumPrice;
-		
-		if(size == "A5" && color == "white" && page <= 10) {
-			price = 500;
-		}		 
+			 
 		return price;
 	}
 }

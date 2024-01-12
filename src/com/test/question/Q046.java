@@ -15,6 +15,7 @@ public class Q046 {
 			result += getKorean(num);
 		}
 		System.out.println(result);
+		sc.close();
 
 	}
 

@@ -1,6 +1,5 @@
 package com.test.question;
 
-import java.util.Arrays;
 
 public class Q066 {
 
@@ -27,6 +26,7 @@ public class Q066 {
 		}
 		result += "]";
 		System.out.println(result);
+	
 	}
 
 }

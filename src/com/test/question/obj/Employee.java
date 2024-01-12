@@ -28,6 +28,9 @@ public class Employee {
 		return department;
 	}
 	public void setDepartment(String department) {
+		if(this.department == "영업부" || "기획부" || "총무부" || "개발부" || "홍보부") {
+			return;
+		}
 		this.department = department;
 	}
 	public String getPosition() {

@@ -3,7 +3,6 @@ package com.test.question;
 public class Q055 {
 
 	public static void main(String[] args) {
-		int n = 2; // 시작 숫자
 
 		for (int j = 2; j <= 100; j++) {
 			int sum = 0;

@@ -34,5 +34,6 @@ public class Q023 {
 		daughterTime = daugtherBirth.getTimeInMillis();
 		
 		System.out.printf("아빠는 딸보다 총 %,d일을 더 살았습니다.", (daughterTime - fatherTime) / 1000 / 60 / 60 /24);
+		sc.close();
 	}
 }
