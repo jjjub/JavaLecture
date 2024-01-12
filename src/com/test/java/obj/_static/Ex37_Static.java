@@ -86,7 +86,7 @@ class Student{
 		
 		return String.format("%s[%d세, %s]"	, this.name
 											, this.age
-											, this.school);
+											, Student.school);
 		
 		
 		
