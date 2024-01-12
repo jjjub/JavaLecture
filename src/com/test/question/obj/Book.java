@@ -1,6 +1,5 @@
 package com.test.question.obj;
 
-import java.util.Arrays;
 
 public class Book {
 	private String title;
