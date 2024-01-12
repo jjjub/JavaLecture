@@ -33,5 +33,18 @@ public class Monitor {
 			return 3;
 		}
 	}
+//	@Override
+//	public String toString() {
+//		// TODO Auto-generated method stub
+//		return String.format("%s[%,d원, %d인치]"
+//				,this.model
+//				,this.price
+//				,this.size);
+//	}
+
+	@Override
+	public String toString() {
+		return "Monitor [model=" + model + ", size=" + size + ", price=" + price + "]";
+	}
 
 }
