@@ -103,6 +103,9 @@ public class Ex45_Cast {
 		System.out.println(c4.c);
 		System.out.println(c4.d);
 		
+		//패키지가 달라서 안보임
+//		Point p4 = new Point();/
+		
 
 	}
 

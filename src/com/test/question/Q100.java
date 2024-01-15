@@ -102,7 +102,7 @@ class BallPointPen {
 	}
 
 	public String info() {
-		return String.format("%s색상 %d 진하기 연필입니다.", color, thickness);
+		return String.format("%s색상 %.1fmm 볼펜입니다..", color, thickness);
 	}
 }
 
@@ -139,7 +139,7 @@ class Packer {
 	private static int ballPointPenCount;
 	private static int rulerCount;
 
-	public void Packing(Pencil pencil) {
+	public void packing(Pencil pencil) {
 		System.out.println("포장 전 검수: " + pencil.info());
 
 		if (pencil.getHardness() == "4B" || pencil.getHardness() == "3B" || pencil.getHardness() == "2B"
@@ -152,34 +152,74 @@ class Packer {
 		}
 
 	}
-	
-	public void Packing(Eraser eraser) {
-		System.out.println("포장 전 검수 : "+eraser.info());
+
+	public void packing(Eraser eraser) {
+		System.out.println("포장 전 검수 : " + eraser.info());
 		if (eraser.getSize() == "Large" || eraser.getSize() == "Medium" || eraser.getSize() == "Smll") {
 			eraserCount++;
 			System.out.println("포장을 완료했습니다.");
-		}else {
+		} else {
 			System.out.println("포장을 실패하였습니다.");
 		}
 	}
-	
-	public void Packing(BallPointPen ballPointPen) {
+
+	public void packing(BallPointPen ballPointPen) {
 		System.out.println("포장 전 검수 : " + ballPointPen.info());
-		if(ballPointPen.getColor() == "red" || ballPointPen.getColor() == "blue" ||ballPointPen.getColor() == "green" ||ballPointPen.getColor() == "black") {
-			if(ballPointPen.getThickness() == 0.3 ||ballPointPen.getThickness() == 0.5 || ballPointPen.getThickness() == 0.7 || ballPointPen.getThickness() == 1.0 || ballPointPen.getThickness() == 1.5 ) {
-				
+		if (ballPointPen.getColor() == "red" || ballPointPen.getColor() == "blue" || ballPointPen.getColor() == "green"
+				|| ballPointPen.getColor() == "black") {
+			if (ballPointPen.getThickness() == 0.3 || ballPointPen.getThickness() == 0.5
+					|| ballPointPen.getThickness() == 0.7 || ballPointPen.getThickness() == 1.0
+					|| ballPointPen.getThickness() == 1.5) {
+
 				ballPointPenCount++;
 				System.out.println("포장을 완료했습니다.");
 			}
-		}else {
+		} else {
 			System.out.println("포장을 실패하였습니다.");
 		}
-		
-	}
-	
-	public void Packing(Ruler ruler) {
-		System.out.println("포장 전 검수 : " + ruler.info());
-		if(ruler.getLength())
+
 	}
 
+	public void packing(Ruler ruler) {
+		System.out.println("포장 전 검수 : " + ruler.info());
+		if (ruler.getLength() == 30 || ruler.getLength() == 50 || ruler.getLength() == 100) {
+			if (ruler.getShape() == "줄자" || ruler.getShape() == "운형자" || ruler.getShape() == "삼각자") {
+				rulerCount++;
+				System.out.println("포장을 완료했습니다.");
+			}
+		} else {
+			System.out.println("포장을 실패하였습니다.");
+		}
+	}
+
+	public void countPacking(int num) {
+		System.out.println("");
+		
+		
+		switch (num) {
+		case 1:
+			result();
+			System.out.printf("연필 %d회", Packer.pecilCount);
+			break;
+		case 2:
+			result();
+			System.out.printf("지우개 %d회", Packer.eraserCount);
+			break;
+		case 3:
+			result();
+			System.out.printf("볼펜 %d회", Packer.ballPointPenCount);
+			break;
+		case 4:
+			result();
+			System.out.printf("자 %d회", Packer.rulerCount);
+			break;
+		}
+	}
+
+	private void result() {
+		System.out.println("==================");
+		System.out.println("포장 결과");
+		System.out.println("==================");
+		
+	}
 }

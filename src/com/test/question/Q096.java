@@ -32,39 +32,37 @@ class Box {
 
 	}
 
-	public boolean check() {
-		for (int i = 0; i < list.length; i++) {
-			if (!(list[i].getSize() >= 8 && list[i].getSize() <= 14)) {;
+	public boolean check(Macaron m) {
+			if (!(m.getSize() >= 8 && m.getSize() <= 14)) {
 				return false;
-			} else if (list[i].getColor().equals("black")) {
+			} 
+			if (m.getColor().equals("black")) {
 				return false;
 			}
-				return true;
-			
+			if(!(m.getSize()>= 3 && m.getSize() <=18)) {
+				return false;
 		}
+
+		return true;
 		
+
 	}
 
-	public boolean check(Macaron macaron) {
+	public void check() {
 		int pass = 0;
 		int failed = 0;
 		for (int i = 0; i < list.length; i++) {
-			if (!(list[i].getSize() >= 8 && list[i].getSize() <= 14)) {
+			Macaron m = this.list[i];
+			if (check(m)) {
 				failed++;
-				return false;
-			} else if (list[i].getColor().equals("black")) {
-				failed++;
-				return false;
 			} else {
 				pass++;
-				return true;
 			}
 		}
 		System.out.println("[박스 체크 결과]");
 		System.out.printf("QC 합격 개수 : %d\n", pass);
 		System.out.printf("QC 불합격 개수 : %d\n", failed);
 		System.out.println();
-		return true;
 
 	}
 
