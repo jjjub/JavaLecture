@@ -32,6 +32,19 @@ class Box {
 
 	}
 
+	public boolean check() {
+		for (int i = 0; i < list.length; i++) {
+			if (!(list[i].getSize() >= 8 && list[i].getSize() <= 14)) {;
+				return false;
+			} else if (list[i].getColor().equals("black")) {
+				return false;
+			}
+				return true;
+			
+		}
+		
+	}
+
 	public boolean check(Macaron macaron) {
 		int pass = 0;
 		int failed = 0;
