@@ -55,9 +55,9 @@ public class Q101 {
 class Barista {
 	
 	Espresso makeEspresso(int bean) {
-		Espresso espresso = new Espresso(bean);
-		Coffee.countCoffe(espresso);
-		return espresso;
+	Espresso espresso = new Espresso(bean);
+	Coffee.countCoffe(espresso);
+	return espresso;
 
 	}
 	
