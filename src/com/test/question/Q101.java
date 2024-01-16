@@ -167,11 +167,32 @@ class Coffee {
 		iceUnitPrice = 3;
 		milkUnitPrice = 4;
 		
-		beanTotalPrice = 
+		beanTotalPrice = 0;
+		waterTotalPrice = 0;
+		iceTotalPrice = 0;
+		milkTotalPrice =0;
+		
+		americano = 0;
+		latte = 0;
+		espresso = 0;
+		
 	}
-	void countAmericano() {
-		int count = 0;
-		count++;
+	void countCoffe(Americano americano) {
+		Coffee.americano++;
+		Coffee.bean += americano.getBean();
+		Coffee.americano += americano.getIce();
+		Coffee.americano += americano.getWater();
+		beanTotalPrice += beanUnitPrice*americano.getBean();
+		iceTotalPrice += iceUnitPrice * americano.getIce();
+		waterTotalPrice += waterUnitPrice*americano.getWater();
+		
+	}
+	void countCoffe(Latte latte) {
+		Coffee.latte++;
+		Coffee.bean += latte.getBean();
+		Coffee.latte += latte.getMilk();
+		beanTotalPrice += beanUnitPrice*latte.getBean();
+		milkTotalPrice += beanUnitPrice*latte.getMilk();
 		
 	}
 	
