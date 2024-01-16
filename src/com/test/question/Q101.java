@@ -54,13 +54,9 @@ public class Q101 {
 
 class Barista {
 	
-	private int bean;
-	private int count;
-	private int milk;
-	
 	Espresso makeEspresso(int bean) {
-		Espresso espresso = new Espresso();
-		
+		Espresso espresso = new Espresso(bean);
+		Coffee.countCoffe(espresso);
 		return espresso;
 
 	}
@@ -83,7 +79,36 @@ class Barista {
 	}
 	
 	void result() {
-		
+		System.out.println("=======================");
+		System.out.println("판매 결과");
+		System.out.println("=======================");
+		System.out.println();
+		System.out.println("--------------");
+		System.out.println("음료 판매량");	
+		System.out.println("--------------");
+		System.out.printf("에스프레소: %d잔\n", Coffee.espresso);
+		System.out.printf("아메리카노: %d잔\n", Coffee.americano);
+		System.out.printf("라테: %d잔\n", Coffee.latte);
+		System.out.println();
+		System.out.println("--------------");
+		System.out.println("원자재 소비량");	
+		System.out.println("--------------");
+		System.out.printf("원두: %dg\n",Coffee.bean );
+		System.out.printf("물: %dml\n",Coffee.water );
+		System.out.printf("얼음: %d개\n",Coffee.ice );
+		System.out.printf("우유: %dml\n",Coffee.milk );
+		System.out.println("--------------");
+		System.out.println("매출액");	
+		System.out.println("--------------");
+		System.out.printf("원두: %d원\n", Coffee.beanTotalPrice);
+		System.out.printf("물: %d원\n", Coffee.waterTotalPrice);
+		System.out.printf("얼음: %d원\n", Coffee.iceTotalPrice);
+		System.out.printf("우유: %d원\n", Coffee.milkTotalPrice);
+		System.out.println();
+	
+	
+	
+	
 	}
 
 }
@@ -177,7 +202,7 @@ class Coffee {
 		espresso = 0;
 		
 	}
-	void countCoffe(Americano americano) {
+	public static void countCoffe(Americano americano) {
 		Coffee.americano++;
 		Coffee.bean += americano.getBean();
 		Coffee.americano += americano.getIce();
@@ -187,13 +212,19 @@ class Coffee {
 		waterTotalPrice += waterUnitPrice*americano.getWater();
 		
 	}
-	void countCoffe(Latte latte) {
+	public static void countCoffe(Latte latte) {
 		Coffee.latte++;
 		Coffee.bean += latte.getBean();
 		Coffee.latte += latte.getMilk();
 		beanTotalPrice += beanUnitPrice*latte.getBean();
 		milkTotalPrice += beanUnitPrice*latte.getMilk();
 		
+	}
+	public static void countCoffe(Espresso espresso) {
+		Coffee.espresso++;
+		Coffee.bean += espresso.getBean();
+		beanTotalPrice += beanUnitPrice*espresso.getBean();
+
 	}
 	
 }
