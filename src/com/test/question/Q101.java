@@ -56,25 +56,33 @@ class Barista {
 	
 	public Espresso makeEspresso(int bean) {
 	Espresso espresso = new Espresso(bean);
-	Coffee.countCoffe(espresso);
+	Coffee.countCoffee(espresso);
 	return espresso;
 
 	}
 	
 	Espresso[] makeEspressoes(int bean, int count) {
 		
-	Espresso espresso[] = new Espresso[count];
 	
-	for(int i=0; i<espresso.length; i++) {
-		Espresso espresso = new Espresso(bean);
-		Coffee.
-		espresso[i] = espresso;
-	}
-	return espresso;
+		Espresso[] espressoes =new Espresso[count];
+		for(int i=0; i<espressoes.length; i++) {
+			
+			Espresso espresso = new Espresso(bean);
+			Coffee.countCoffee(espresso);
+			espressoes[i] = espresso;
+		}
+	
+	return espressoes;
 	}
 	
 	Latte makeLatte(int bean, int milk) {
-	Latte latte = new Latte(int bean, int milk);
+		Latte latte = new Latte(bean, milk);
+		Coffee.countCoffee(latte);
+		return latte;
+		
+		
+	}
+	Latte latte = new Latte(int bean, int milk) {
 	
 		
 	}
@@ -126,14 +134,6 @@ class Barista {
 class Espresso {
 	private int bean;
 	
-	public Espresso(int bean2) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public Espresso(int bean2) {
-		// TODO Auto-generated constructor stub
-	}
-
 	public int getBean() {
 		return bean;
 	}
@@ -220,7 +220,7 @@ class Coffee {
 		espresso = 0;
 		
 	}
-	public static void countCoffe(Americano americano) {
+	public static void countCoffee(Americano americano) {
 		Coffee.americano++;
 		Coffee.bean += americano.getBean();
 		Coffee.americano += americano.getIce();
@@ -230,7 +230,7 @@ class Coffee {
 		waterTotalPrice += waterUnitPrice*americano.getWater();
 		
 	}
-	public static void countCoffe(Latte latte) {
+	public static void countCoffee(Latte latte) {
 		Coffee.latte++;
 		Coffee.bean += latte.getBean();
 		Coffee.latte += latte.getMilk();
@@ -238,7 +238,7 @@ class Coffee {
 		milkTotalPrice += beanUnitPrice*latte.getMilk();
 		
 	}
-	public static void countCoffe(Espresso espresso) {
+	public static void countCoffee(Espresso espresso) {
 		Coffee.espresso++;
 		Coffee.bean += espresso.getBean();
 		beanTotalPrice += beanUnitPrice*espresso.getBean();
