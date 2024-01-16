@@ -66,7 +66,8 @@ class Barista {
 	Espresso espresso[] = new Espresso[count];
 	
 	for(int i=0; i<espresso.length; i++) {
-		
+		Espresso espresso = new Espresso(bean);
+		Coffee.
 		espresso[i] = espresso;
 	}
 	return espresso;
