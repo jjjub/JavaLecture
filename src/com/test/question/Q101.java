@@ -54,7 +54,7 @@ public class Q101 {
 
 class Barista {
 	
-	Espresso makeEspresso(int bean) {
+	public Espresso makeEspresso(int bean) {
 	Espresso espresso = new Espresso(bean);
 	Coffee.countCoffe(espresso);
 	return espresso;
@@ -62,9 +62,18 @@ class Barista {
 	}
 	
 	Espresso[] makeEspressoes(int bean, int count) {
+		
+	Espresso espresso[] = new Espresso[count];
 	
+	for(int i=0; i<espresso.length; i++) {
+		
+		espresso[i] = espresso;
 	}
+	return espresso;
+	}
+	
 	Latte makeLatte(int bean, int milk) {
+	Latte latte = new Latte(int bean, int milk);
 	
 		
 	}
@@ -116,6 +125,14 @@ class Barista {
 class Espresso {
 	private int bean;
 	
+	public Espresso(int bean2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Espresso(int bean2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getBean() {
 		return bean;
 	}
