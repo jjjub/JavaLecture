@@ -3,6 +3,8 @@ package com.test.java.collection;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.test.question.Q104;
+
 public class Ex54_ArrayList {
 	public static void main(String[] args) {
 
@@ -30,77 +32,94 @@ public class Ex54_ArrayList {
 //		m4();
 //		m5();
 //		m6();
-		m7();
-		m8();
+//		m7();
+//		m8();
 	}
 
 	private static void m8() {
 		
-		//배열 생성
-		MyArrayList list = new MyArrayList();
-		
-		System.out.println(list);
-		
+		Q104 list = new Q104();
+
 		//추가
 		list.add("홍길동");
 		list.add("아무개");
 		list.add("하하하");
-		list.add("후후후");
+		list.add("하하하");
+		list.add("하하하");
+		list.add("하하하");
+		
 		System.out.println(list);
-//		list.add("호호호");
-//		list.add("헤헤헤");
-//		list.add("가가가");
-//		list.add("나나나");
-//
-//		System.out.println(list);
-//		
-//		list.add("다다다");
 
-		//읽기
+//		//읽기
 		System.out.println(list.get(0));
 		System.out.println(list.get(1));
 		System.out.println(list.get(2));
-//		System.out.println(list.get(3));
+//		System.out.println(list.get(7));
 //
-		//개수
+//		//개수
 		System.out.println(list.size());
-
-		//탐색 + 읽기
+//
+//		//탐색 + 읽기
 		for (int i=0; i<list.size(); i++) {
 		      System.out.println(list.get(i));
 		}
-
-		//수정
+//
+//		//수정
 		list.set(0, "우하하");
+		list.set(4, "푸하하");
 		System.out.println(list.get(0));
-
+		System.out.println();
+		System.out.println(list);
+//
 //		//삭제
-//		list.remove(1);
-//		for (int i=0; i<list.size(); i++) {
-//		      System.out.println(list.get(i));
-//		}
-//
-//		//삽입
-//		list.add(1, "호호호");
-//		for (int i=0; i<list.size(); i++) {
-//		      System.out.println(list.get(i));
-//		}
-//
-//		//검색
-//		if (list.indexOf("홍길동") > -1) {
-//		      System.out.println("홍길동 있음");
-//		} else {
-//		      System.out.println("홍길동 없음");
-//		}
-//
-//		//초기화
-//		list.clear();
-//		System.out.println(list.size());
-//		
-//		
+		list.remove(1);
+		System.out.println("삭제 후");
+		System.out.println(list);
+		
+		list.remove("푸하하");
+		System.out.println(list);
 		
 		
+		//삽입
+		list.add(1, "호호호");
+		for (int i=0; i<list.size(); i++) {
+		      System.out.println(list.get(i));
+		}
+//
+		//검색
+		if (list.indexOf("홍길동") > -1) {
+		      System.out.println("홍길동 있음");
+		} else {
+		      System.out.println("홍길동 없음");
+		}
+
+		System.out.println(list.indexOf("호호호"));
+		System.out.println(list.lastIndexOf("호호호"));
+		System.out.println(list.indexOf("호호호",2));
+		System.out.println(list.lastIndexOf("호호호",2));
+		//초기화
+		list.clear();
+		System.out.println(list);
+		System.out.println(list.size());
 		
+		//trimToSize()
+		list.add("홍길동");
+		list.add("아무개");
+		list.add("강아지");
+		list.add("고양이");
+		list.add("병아리");
+		System.out.println(list);
+		
+		//잘안씀 빈공간제거
+		list.trimToSize();
+		System.out.println(list);
+		
+		MyArrayList list2 = new MyArrayList(100);
+		
+		for(int i=0; i<100; i++) {
+			list2.add(i + "");
+		}
+		System.out.println(list2);
 		
 	}
 
