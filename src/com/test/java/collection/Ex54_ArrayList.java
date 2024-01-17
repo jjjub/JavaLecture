@@ -29,7 +29,101 @@ public class Ex54_ArrayList {
 //		m3();
 //		m4();
 //		m5();
-		m6();
+//		m6();
+		m7();
+		m8();
+	}
+
+	private static void m8() {
+		
+		//배열 생성
+		MyArrayList list = new MyArrayList();
+		
+		System.out.println(list);
+		
+		//추가
+		list.add("홍길동");
+		list.add("아무개");
+		list.add("하하하");
+		list.add("후후후");
+		System.out.println(list);
+//		list.add("호호호");
+//		list.add("헤헤헤");
+//		list.add("가가가");
+//		list.add("나나나");
+//
+//		System.out.println(list);
+//		
+//		list.add("다다다");
+
+		//읽기
+		System.out.println(list.get(0));
+		System.out.println(list.get(1));
+		System.out.println(list.get(2));
+//		System.out.println(list.get(3));
+//
+		//개수
+		System.out.println(list.size());
+
+		//탐색 + 읽기
+		for (int i=0; i<list.size(); i++) {
+		      System.out.println(list.get(i));
+		}
+
+		//수정
+		list.set(0, "우하하");
+		System.out.println(list.get(0));
+
+//		//삭제
+//		list.remove(1);
+//		for (int i=0; i<list.size(); i++) {
+//		      System.out.println(list.get(i));
+//		}
+//
+//		//삽입
+//		list.add(1, "호호호");
+//		for (int i=0; i<list.size(); i++) {
+//		      System.out.println(list.get(i));
+//		}
+//
+//		//검색
+//		if (list.indexOf("홍길동") > -1) {
+//		      System.out.println("홍길동 있음");
+//		} else {
+//		      System.out.println("홍길동 없음");
+//		}
+//
+//		//초기화
+//		list.clear();
+//		System.out.println(list.size());
+//		
+//		
+		
+		
+		
+		
+	}
+
+	private static void m7() {
+		
+		ArrayList<Integer> nums = new ArrayList<>();
+		//내부 배열의 크기(X) > 배열내에 있는 데이터의 개수
+		System.out.println(nums.size());
+		
+		nums.add(10);
+		nums.add(20);
+		nums.add(30);
+		nums.add(40);
+		
+		System.out.println(nums.size());
+//		for(int i=0; i<1000000; i++) {
+//			nums.add(i);
+//		}
+//		System.out.println(nums.size());
+//		System.out.println(nums);
+		
+	
+	
 	}
 
 	private static void m6() {
