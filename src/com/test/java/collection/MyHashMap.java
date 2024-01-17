@@ -18,6 +18,19 @@ public class MyHashMap {
 		this.values[this.index] = values;
 		index++;
 	}
+
+	public String get(String s) {
+		int itemIndex = 0;
+		for(int i=0; i<this.keys.length; i++) {
+			if(keys[i] == s) {
+				itemIndex = i;
+				break;
+			}
+			i++;
+		}
+		
+		return values[itemIndex];
+	}
 	
 	
 	
