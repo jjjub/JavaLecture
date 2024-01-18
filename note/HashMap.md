@@ -40,6 +40,8 @@ ex) 햇님반, 달님반, 별님반
 
 - 반복 돌릴 예정이면 Hash는 안쓰는것이 좋다.
 
+- 데이터 중복 > 반영 안됨 > return false;
+
 ```java
 HashMap<String, String> map = new HashMap<>();
 //1. 요소 추가
@@ -71,3 +73,49 @@ map.put("red", "파랑"); //수정
 map.clear();
 System.out.println(map);
 ```
+
+
+
+
+
+## Set
+
+요소 읽기 > 방을 구분 불가능 > 원하는 요소 추출 불가능;;
+
+읽기 도구 제공(***)  > Iterator > 향상된 for문
+
+```java
+Iterator<String> iter = set.iterator();
+
+set.add("사과");
+set.add("딸기");
+set.add("바나나");
+
+
+System.out.println(iter.hasNext());
+System.out.println(iter.next());
+```
+
+```java
+//중요*******
+		HashSet<Member> set = new HashSet<Member>();
+		
+		Member m1 = new Member("홍길동", 20);
+		set.add(m1);
+		
+		set.add(new Member("아무개", 25));
+		set.add(new Member("강아지", 3));
+		set.add(new Member("고양이", 2));
+		
+		System.out.println(set.add(m1));
+		//m1과 다른 주소값을 가진 객체	(인스턴스가 다름)
+		set.add(new Member("홍길동", 20));
+		
+		System.out.println(set);
+```
+
+
+
+list, set의 부모 클래스 collection > 서로 변환 가능
+
+map은 다름

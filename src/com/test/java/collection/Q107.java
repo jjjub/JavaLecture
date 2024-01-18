@@ -25,24 +25,26 @@ public class Q107 {
 		//삭제
 		map.remove("영어");
 		System.out.println(map.get("영어"));
-
+		
+		
 		//검색(key)
 		if (map.containsKey("국어")) {
 		      System.out.println("국어 점수 있음");
 		} else {
 		      System.out.println("국어 점수 없음");
 		}
-//
+
+		System.out.println(map);
 		//검색(value)
 		if (map.containsValue("합격")) {
 		      System.out.println("합격 과목 있음");
 		} else {
 		      System.out.println("합격 과목 없음");
 		}
-//
-		//초기화
-		map.clear();
-		System.out.println(map.size());
+////
+//		//초기화
+//		map.clear();
+//		System.out.println(map.size());
+//	}
 	}
-
 }

@@ -27,11 +27,12 @@ public class MyHashMap {
 			if (checkLength()) {
 				doubleList();
 			}
+
 			this.keys[this.index] = keys;
 			this.values[this.index] = values;
 			index++;
 		} else {
-			this.values[checkKey(keys)] = keys;
+			this.values[checkKey(keys)] = values;
 		}
 	}
 
@@ -58,16 +59,16 @@ public class MyHashMap {
 	}
 
 	public String get(String key) {
-		if(checkKey(key) == -1) {
+		if (checkKey(key) == -1) {
 			return null;
-		}else{
+		} else {
 			return this.values[checkKey(key)];
 		}
 	}
 
 	private int checkKey(String key) {
 		for (int i = 0; i < this.keys.length; i++) {
-			if (this.keys[i]==key) {
+			if (this.keys[i] == key) {
 				return i;
 			}
 		}
@@ -76,7 +77,7 @@ public class MyHashMap {
 
 	private int checkValue(String value) {
 		for (int i = 0; i < this.values.length; i++) {
-			if (this.values[i]== value) {
+			if (this.values[i] == value) {
 				return i;
 			}
 		}
@@ -88,14 +89,15 @@ public class MyHashMap {
 	}
 
 	public void remove(String key) {
-
-		for (int i = checkKey(key); i < this.index - 2; i++) {
-			this.values[i] = this.values[i + 1];
+		if (checkKey(key) > -1) {
+			for (int i = checkKey(key); i <= this.keys.length - 2; i++) {
+				this.values[i] = this.values[i + 1];
+			}
+			for (int i = checkKey(key); i <= this.values.length - 2; i++) {
+				this.keys[i] = this.values[i + 1];
+			}
+			this.index--;
 		}
-		for (int i = checkKey(key); i < this.index - 2; i++) {
-			this.keys[i] = this.values[i + 1];
-		}
-		index--;
 	}
 
 	public boolean containsKey(String key) {
@@ -116,8 +118,8 @@ public class MyHashMap {
 	}
 
 	public void clear() {
-		this.index =0;
-		
+		this.index = 0;
+
 	}
 
 }
