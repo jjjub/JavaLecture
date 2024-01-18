@@ -22,7 +22,7 @@ public class MyHashMap {
 	}
 
 	public void put(String keys, String values) {
-		if (checkKey(keys) == -1) {
+		if (checkIndex(keys) == -1) {
 
 			if (checkLength()) {
 				doubleList();
@@ -32,7 +32,7 @@ public class MyHashMap {
 			this.values[this.index] = values;
 			index++;
 		} else {
-			this.values[checkKey(keys)] = values;
+			this.values[checkIndex(keys)] = values;
 		}
 	}
 
@@ -59,25 +59,16 @@ public class MyHashMap {
 	}
 
 	public String get(String key) {
-		if (checkKey(key) == -1) {
+		if (checkIndex(key) == -1) {
 			return null;
 		} else {
-			return this.values[checkKey(key)];
+			return this.values[checkIndex(key)];
 		}
 	}
 
-	private int checkKey(String key) {
-		for (int i = 0; i < this.keys.length; i++) {
+	private int checkIndex(String key) {
+		for (int i = 0; i < this.index; i++) {
 			if (this.keys[i] == key) {
-				return i;
-			}
-		}
-		return -1;
-	}
-
-	private int checkValue(String value) {
-		for (int i = 0; i < this.values.length; i++) {
-			if (this.values[i] == value) {
 				return i;
 			}
 		}
@@ -89,28 +80,33 @@ public class MyHashMap {
 	}
 
 	public void remove(String key) {
-		if (checkKey(key) > -1) {
-			for (int i = checkKey(key); i <= this.keys.length - 2; i++) {
-				this.values[i] = this.values[i + 1];
-			}
-			for (int i = checkKey(key); i <= this.values.length - 2; i++) {
+		int index = checkIndex(key);
+		if (checkIndex(key) > -1) {
+			for (int i = index; i <= this.values.length - 2; i++) {
 				this.keys[i] = this.values[i + 1];
+			}
+			for (int i = index; i <= this.keys.length - 2; i++) {
+				this.values[i] = this.values[i + 1];
 			}
 			this.index--;
 		}
 	}
 
 	public boolean containsKey(String key) {
-		if (checkKey(key) == -1) {
+		if (checkIndex(key) == -1) {
+			for (int i = 0; i < index; i++) {
+				if (this.keys[i].equals(key)) {
+					return true;
 
+				} 
+				
+			}
 			return false;
-		} else {
-			return true;
-		}
+		
 	}
 
 	public boolean containsValue(String value) {
-		if (checkValue(value) == -1) {
+		if (checkIndex(value) == -1) {
 			return false;
 		} else {
 			return false;
