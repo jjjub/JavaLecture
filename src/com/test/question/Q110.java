@@ -22,8 +22,16 @@ public class Q110 {
 
 	private static void getSize(long length) {
 		// 파일 크기 단위 조정
-		if(length >= 1000000000000) {
+		if(length < 1024) {
 			
+		}else if(length < 1024 * 1024){
+			
+		}else if(length < 1024 * 1024 * 1024){
+			
+		}else if(){
+			g = mb
+		}else if{
+			tb
 		}
 		
 	}

@@ -74,10 +74,6 @@ map.clear();
 System.out.println(map);
 ```
 
-
-
-
-
 ## Set
 
 요소 읽기 > 방을 구분 불가능 > 원하는 요소 추출 불가능;;
@@ -98,23 +94,21 @@ System.out.println(iter.next());
 
 ```java
 //중요*******
-		HashSet<Member> set = new HashSet<Member>();
-		
-		Member m1 = new Member("홍길동", 20);
-		set.add(m1);
-		
-		set.add(new Member("아무개", 25));
-		set.add(new Member("강아지", 3));
-		set.add(new Member("고양이", 2));
-		
-		System.out.println(set.add(m1));
-		//m1과 다른 주소값을 가진 객체	(인스턴스가 다름)
-		set.add(new Member("홍길동", 20));
-		
-		System.out.println(set);
+        HashSet<Member> set = new HashSet<Member>();
+
+        Member m1 = new Member("홍길동", 20);
+        set.add(m1);
+
+        set.add(new Member("아무개", 25));
+        set.add(new Member("강아지", 3));
+        set.add(new Member("고양이", 2));
+
+        System.out.println(set.add(m1));
+        //m1과 다른 주소값을 가진 객체    (인스턴스가 다름)
+        set.add(new Member("홍길동", 20));
+
+        System.out.println(set);
 ```
-
-
 
 list, set의 부모 클래스 collection > 서로 변환 가능
 
