@@ -14,7 +14,7 @@ public class Q089 {
 			
 		}
 		
-
+		sc.close();
 	}
 
 }
