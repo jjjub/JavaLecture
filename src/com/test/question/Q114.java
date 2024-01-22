@@ -14,9 +14,9 @@ public class Q114 {
 		
 		
 		for(File files : list) {
-			type = files.getName().substring(files.getName().lastIndexOf("."));
+			type = files.getName().substring(files.getName().lastIndexOf(".")+1);
 			
-			if( count != null) {
+			if( count == null) {
 				count.put(type, 1);
 			}else {
 				count.put(type, count.get(type)+1);
