@@ -1,5 +1,5 @@
 package com.test.java.collection;
-
+//TODO 중복 제거
 public class Member {
 
 	private String name;
@@ -22,7 +22,7 @@ public class Member {
 	public String toString() {
 		return String.format("%s(%d)",this.name, this.age);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		//이름 + 나이

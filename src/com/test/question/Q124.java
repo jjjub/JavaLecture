@@ -12,7 +12,6 @@ public class Q124 {
 		try {
 			String path ="C:\\Users\\user\\Downloads\\파일 입출력 문제\\단일검색.dat";
 			Scanner sc = new Scanner(System.in);
-			
 			System.out.print("이름: ");
 			String name = sc.nextLine();
 			String line = null;
