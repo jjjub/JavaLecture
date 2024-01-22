@@ -160,13 +160,13 @@ public class Ex65_Lambda {
 		NoParameterReturn pr12 = () -> 10;
 		System.out.println(pr12.call());
 		
-		ParameterReturn pr14 = (int a, int b) -> {
+		ParameterReturn pr13 = (int a, int b) -> {
 			return a+b;
 		};
-		System.out.println(pr14.call(100, 200));
+		System.out.println(pr13.call(100, 200));
 		
-		ParameterReturn pr13 = (a, b) -> a+b;
-		System.out.println(pr13.call(10, 20));
+		ParameterReturn pr14 = (a, b) -> a+b;
+		System.out.println(pr14.call(10, 20));
 		
 		
 		
