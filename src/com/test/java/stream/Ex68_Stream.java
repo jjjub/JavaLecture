@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -25,18 +26,24 @@ public class Ex68_Stream {
 
 		/*
 		 * 
-		 * 자바 스트림 1. 입출력 스트림 - 파일 입출력, 콘솔 입출력, 네트워크 입출력 등... 2. 스트림 - Java8(1.8) + 람다식과
-		 * 같이 출시 - 배열(컬렉션)의 탐색(조작) 기술(********) - 파일 입출력 지원 - 디렉토리 탐색 지원 - 기타 등등...
-		 * 여러곳에서 시도 중 - 익명 객체 (적극적으로) 사용 > 람다식 사용 + 함수형 인터페이스
+		 * 자바 스트림 
+		 * 1. 입출력 스트림 - 파일 입출력, 콘솔 입출력, 네트워크 입출력 등... 
+		 * 2. 스트림 - Java8(1.8) + 람다식과 같이 출시 
+		 * - 배열(컬렉션)의 탐색(조작) 기술(********) 
+		 * - 파일 입출력 지원 
+		 * - 디렉토리 탐색 지원 
+		 * - 기타 등등...
+		 * 여러곳에서 시도 중 
+		 * - 익명 객체 (적극적으로) 사용 > 람다식 사용 + 함수형 인터페이스
 		 * 
 		 * 
-		 * 표준 API 함수형 인터페이스 1. Consumer - (매개변수) -> {} 2. Supplier - () -> { return 값; }
-		 * 3. Function - (매개변수) -> { return 값; } 4. Operator - (매개변수) -> { return 값; } -
-		 * 매개변수와 반환값이 동일한 타입 5. Predicate - (매개변수) -> { return 값; } - 반환값이 boolean
+		 * 표준 API 함수형 인터페이스 
+		 * 1. Consumer - (매개변수) -> {} 
+		 * 2. Supplier - () -> { return 값; }
+		 * 3. Function - (매개변수) -> { return 값; } 
+		 * 4. Operator - (매개변수) -> { return 값; } - 매개변수와 반환값이 동일한 타입 
+		 * 5. Predicate - (매개변수) -> { return 값; } - 반환값이 boolean
 		 * 
-		 * 
-		 *
-		*
 		 * 
 		 * 
 		 * 스트림, Stream - 데이터 소스로부터 생성 - list.stream().기능()
@@ -46,7 +53,6 @@ public class Ex68_Stream {
 		 * 2. 최종 파이프
 		 * 
 		 * 최종 처리 -forEach() - 최종 파이프 - 앞의 스트림으로부터 요소를 받아 최종 처리하는 메서드
-		 * 
 		 * 필터링 - filter() - 중간 파이프 - 앞의 스트림으로부터 요소를 받아 조건에 맞는 요소만 남기고 맞지 많은 요소는 버린다.
 		 * 
 		 * 중복 제거
@@ -55,6 +61,23 @@ public class Ex68_Stream {
 		 *  - 앞의 스트림에서 중복 요소를 제거한다.
 		 *  - 유일한 요소만 남아있는 스트림을 반환한다.
 		 *  - Set 성질
+		 *  
+		 *  변환
+		 *   - map(), mapXXXX()
+		 *   - 중간 파이프
+		 *   - 앞의 스트림의 요소를 다른 형태로 변환 후 새로운 스트림을 반환한다.
+		 *   
+		 *  정렬
+		 *   - sorted()
+		 *   - 중간 파이프
+		 *   - 사용법이 배열, 컬렉션의 sort() 메서드와 동일 > Comparator
+		 *   
+		 *   매칭
+		 *    - allMatch(), anyMatch(), noneMatch()
+		 *    - 최종 파이프
+		 *    - boolean allMatch(Predicate)	 : 모든 요소가 조건을 만족하는지
+		 *    - boolean anyMatch(Predicate)  : 일부 요소가 조건을 만족하는지
+		 *    - boolean noneMatch(Predicate) : 모든 요소가 조건을 불만족하는지
 		 */
 
 //		m1();
@@ -62,7 +85,134 @@ public class Ex68_Stream {
 //		m3();
 //		m4();
 //		m5();
-		m6();
+//		m6();
+//		m7();
+//		m8();
+		m9();
+		
+		
+		
+	}
+
+	private static void m9() {
+		//매칭
+		
+		int[] nums = { 2, 4, 6, 7, 8, 10 };
+		//요구사항] 배열안에 짝수만 있는지?
+		
+	    boolean result = false;
+	    
+	    for(int n: nums) {
+	    	if(n % 2 == 1) {
+	    		result = true;
+	    		break;
+	    	}
+	    }
+		if(!result) {
+			System.out.println("짝수만 존재");
+		}else {
+			System.out.println("홀수가 발견");
+		}
+		
+		
+		result = Arrays.stream(nums).allMatch(n -> n%2==0);
+		System.out.println(result);
+		
+		result = Data.getUserList()
+					.stream()
+					.filter(user -> user.getHeight() >= 178)
+					.allMatch(user -> user.getGender() == 1 );
+		System.out.println(result);
+		
+		//anyMatch
+		//nums > 홀수가 존재하는지 확인
+		nums = new int[] { 2, 4, 6, 7, 8, 10 };
+		result = Arrays.stream(nums).anyMatch(n -> n % 2 ==1);
+		System.out.println(result);
+		
+		result = Data.getUserList().stream()
+								.filter(user -> user.getHeight() >= 178)
+								.anyMatch(user -> user.getGender() ==2);
+		System.out.println(result);
+		
+		//noneMatch
+		//하나라도 참이면 return false;
+		nums = new int[] { 2, 4, 6,  8, 10 };
+		result = Arrays.stream(nums).noneMatch(n -> n % 2 != 0);
+		System.out.println(result);
+		
+		
+	}
+
+	private static void m8() {
+		// 정렬
+		
+		Data.getIntList(10).stream()	
+							.sorted()
+							.forEach(n -> System.out.println(n));
+		System.out.println();
+		
+		Data.getIntList(10).stream()
+							.sorted((a,b) -> b - a)
+							.forEach(n -> System.out.println(n));
+		System.out.println();
+							
+		Data.getIntList(10).stream()
+//							.sorted(Comparator.naturalOrder())
+							.sorted(Comparator.reverseOrder())
+							.forEach(n -> System.out.println(n));
+		System.out.println();
+		System.out.println();
+
+		
+		Data.getIntList().stream()
+							.distinct()
+							.filter(n -> n % 2 ==0)
+							.sorted()
+							.forEach(n -> System.out.println(n));
+		System.out.println();
+		
+	}
+
+	private static void m7() {
+		
+		List<String> list = Data.getStringList(10);
+		System.out.println(list);
+		System.out.println();
+		
+		list.stream()
+			.map(word -> word.length() >= 5 ? "긴단어" : "짧은단어")
+			.forEach(word -> System.out.println(word));
+		System.out.println();
+		
+		
+		Data.getUserList().stream()
+//							.map(user -> user.getAge())
+//							.map(user -> user.getName())
+							.map(user -> user.getGender() == 1 ? "남자" : "여자")
+							.forEach(temp -> System.out.println(temp));
+		
+		System.out.println();
+		
+		//names > Member(name, age) 객체 변환
+		String[] names = {"홍길동", "아무개", "이순신", "하하하", "호호호"};
+		
+		Arrays.stream(names)
+					.map(name -> new Member(name, 20))
+					.forEach(m -> System.out.println(m));
+		System.out.println();
+		
+		//User > (변환) > Member
+		Data.getUserList().stream()
+						.map(user -> new Member(user.getName(), user.getAge()))
+						.forEach(m -> System.out.println(m));
+		System.out.println();
+		
+		
+		
+		
+		
+		
 	}
 
 	private static void m6() {
@@ -112,7 +262,9 @@ public class Ex68_Stream {
 		
 		mlist.stream().forEach(m -> System.out.println(m));
 		System.out.println();
-		mlist.stream().distinct().forEach(m -> System.out.println(m));
+		mlist.stream()
+					.distinct()
+					.forEach(m -> System.out.println(m));
 		
 		
 		
