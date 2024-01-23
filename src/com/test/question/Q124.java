@@ -14,19 +14,30 @@ public class Q124 {
 			Scanner sc = new Scanner(System.in);
 			System.out.print("이름: ");
 			String name = sc.nextLine();
+			String result = "";
 			String line = null;
+		
 			BufferedReader reader = new BufferedReader(new FileReader(path));
 			
 			while((line = reader.readLine())!= null) {
 				String[] temp = line.split(",");
-				if(temp[0].equals(name)) {
-					System.out.printf("[%s]\n", temp[0]);
-					System.out.printf("번호: %d", temp[1]);
-					System.out.printf("주소: %s", temp[2]);
-					System.out.printf("전화: %s", temp[3]);
+				if(temp[1].equals(name)) {
+					result += String.format("[%s]\n", temp[1]);
+					result += String.format("번호: %s", temp[0]);
+					result += String.format("주소: %s", temp[2]);
+					result += String.format("전화: %s", temp[3]);
 					break;
+				
 				}
+				
 			}
+			if(result == ""){
+				System.out.println("없다");
+			}else {
+				System.out.println(result);
+			}
+				
+			
 		} catch (IOException e) {
 			System.out.println("없음");
 			e.printStackTrace();

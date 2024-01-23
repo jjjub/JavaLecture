@@ -10,6 +10,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalDouble;
 import java.util.Set;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -52,8 +54,14 @@ public class Ex68_Stream {
 		 * 
 		 * 2. 최종 파이프
 		 * 
-		 * 최종 처리 -forEach() - 최종 파이프 - 앞의 스트림으로부터 요소를 받아 최종 처리하는 메서드
-		 * 필터링 - filter() - 중간 파이프 - 앞의 스트림으로부터 요소를 받아 조건에 맞는 요소만 남기고 맞지 많은 요소는 버린다.
+		 * 최종 처리 
+		 *  - forEach() 
+		 *  - 최종 파이프 
+		 *  - 앞의 스트림으로부터 요소를 받아 최종 처리하는 메서드
+		 * 필터링 
+		 *  - filter() 
+		 *  - 중간 파이프 
+		 *  - 앞의 스트림으로부터 요소를 받아 조건에 맞는 요소만 남기고 맞지 많은 요소는 버린다.
 		 * 
 		 * 중복 제거
 		 *  - distinct()
@@ -78,6 +86,15 @@ public class Ex68_Stream {
 		 *    - boolean allMatch(Predicate)	 : 모든 요소가 조건을 만족하는지
 		 *    - boolean anyMatch(Predicate)  : 일부 요소가 조건을 만족하는지
 		 *    - boolean noneMatch(Predicate) : 모든 요소가 조건을 불만족하는지
+		 *    
+		 *   집계/통계, Reduce
+		 *    - count()
+		 *    - max()
+		 *    - min()
+		 *    - sum()
+		 *    - avg()
+		 *    - 최종 파이프
+		 *    - 앞의 스트림의 요소를 취합해서 하나의 통계값을 생성
 		 */
 
 //		m1();
@@ -88,7 +105,83 @@ public class Ex68_Stream {
 //		m6();
 //		m7();
 //		m8();
-		m9();
+//		m9();
+		m10();
+		
+		
+		
+	}
+
+	private static void m10() {
+		//count()
+		long count = Data.getIntList().stream().count();
+		System.out.println(count);
+		
+		System.out.println(Data.getUserList().stream().filter(user -> user.getGender() == 1).count());
+		System.out.println(Data.getUserList().stream().filter(user -> user.getGender() == 2).count());
+		
+		
+		//max(), min)_
+		List<Integer> nums = Data.getIntList();
+		
+		int max = -1;	//nums안의 모든 숫자 중 가장 작은 숫자-1
+		int min = 101;  //nums안의 모든 숫자 중 가장 큰 숫자+1
+		
+		for(int n: nums) {
+			if(n>max) {
+				max = n;
+			}
+			if(n < min) {
+				min = n;
+			}
+		}
+		System.out.println(max);
+		System.out.println(min);
+		
+		//Optional<Integer>
+		//Integer or int 타입과 동일한 자료형
+		//값형은 null을 가질 수 없다.
+		//참조형은 null을 가질 수 없다.
+		//- null을 가질 수 있는 int
+		System.out.println(nums.stream().max((a, b) -> a - b));
+		
+//		nums.clear();
+		
+		Optional<Integer> result = nums.stream().max((a, b) -> a - b);
+		
+		System.out.println(result.get());
+		
+		
+		Optional<User> user = Data.getUserList().stream().max((user1, user2)-> user1.getHeight() - user2.getHeight());
+		System.out.println(user.get());
+		
+		Optional<User> user3 = Data.getUserList().stream().min((user1, user2) -> user1.getHeight() - user2.getHeight());
+		System.out.println(user.get());
+		
+		//스트림 요소 타입 > 숫자O or 숫자X
+		//count(), max(), min() > Stream<Type> > 모든 자료형에 적용 가능
+		
+		//스트림 요소 타입 > 숫자O
+		//sum(), avg() > InputStream, DoubleStream.. > 숫자 전용 스트림
+		
+//		nums.stream() == Stream<Integer>
+//		nums.stream().mapToInt(n -> n) == IntStream
+
+		System.out.println(nums.stream().mapToInt(n -> n).sum());
+		OptionalDouble avg = nums.stream().mapToInt(n -> n).average(); //요소가 없으면 평균을 못구한다 > optional값으로 리턴
+		System.out.println(avg.getAsDouble());
+		
+		//남자 평균 키
+		double height = Data.getUserList().stream()
+						.filter(u -> u.getGender()==1)
+						.mapToInt(u -> u.getHeight())
+						.average()
+						.getAsDouble();
+		
+		System.out.println(height);
+		
+		
+		
 		
 		
 		
