@@ -36,7 +36,7 @@ public class Q124 {
 			}else {
 				System.out.println(result);
 			}
-				
+				sc.close();
 			
 		} catch (IOException e) {
 			System.out.println("없음");
